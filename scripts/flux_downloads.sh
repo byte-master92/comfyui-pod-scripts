@@ -19,11 +19,11 @@ wget -O /ComfyUI/models/loras/aidmaMJv7-FLUX-v0.1.safetensors \
 # CivitAI LoRAs (with your API token)
 curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
 "https://civitai.com/api/download/models/1244911?type=Model&format=SafeTensor" \
--o /ComfyUI/models/loras/aidmaPixarUp2-FLUX-v1.0.safetensors
+-o /ComfyUI/models/loras/aidmaFLUXPro1.1-FLUX-v0.3.safetensors
 
 curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
 "https://civitai.com/api/download/models/980278?type=Model&format=SafeTensor" \
--o /ComfyUI/models/loras/aidmaCuteGirl-FLUX-v0.7.safetensors
+-o /ComfyUI/models/loras/aidmaHyperrealism-FLUX-v0.3.safetensors
 
 # VAE
 wget -O /ComfyUI/models/vae/ae.safetensors \
