@@ -46,6 +46,54 @@ else
   echo "aidmaHyperrealism-FLUX-v0.3.safetensors already exists, skipping."
 fi
 
+if [ ! -f /ComfyUI/models/loras/epicGorgeousDetails-FLUX.safetensors ]; then
+  curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
+  "https://civitai.com/api/download/models/863655?type=Model&format=SafeTensor" \
+  -o /ComfyUI/models/loras/epicGorgeousDetails-FLUX.safetensors
+else
+  echo "epicGorgeousDetails-FLUX.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/loras/xlabsFluxRealism-FLUX.safetensors ]; then
+  curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
+  "https://civitai.com/api/download/models/706528?type=Model&format=SafeTensor" \
+  -o /ComfyUI/models/loras/xlabsFluxRealism-FLUX.safetensors
+else
+  echo "xlabsFluxRealism-FLUX.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/loras/yfgZaat-FLUX.safetensors ]; then
+  curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
+  "https://civitai.com/api/download/models/1210090?type=Model&format=SafeTensor" \
+  -o /ComfyUI/models/loras/yfgZaat-FLUX.safetensors
+else
+  echo "yfgZaat-FLUX.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/loras/theVanguard-FLUX.safetensors ]; then
+  curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
+  "https://civitai.com/api/download/models/1312979?type=Model&format=SafeTensor" \
+  -o /ComfyUI/models/loras/theVanguard-FLUX.safetensors
+else
+  echo "theVanguard-FLUX.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/loras/wanderersSemiRealisticPortraits-FLUX.safetensors ]; then
+  curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
+  "https://civitai.com/api/download/models/2038864?type=Model&format=SafeTensor" \
+  -o /ComfyUI/models/loras/wanderersSemiRealisticPortraits-FLUX.safetensors
+else
+  echo "wanderersSemiRealisticPortraits-FLUX.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/loras/nsfwDUnlocked-FLUX.safetensors ]; then
+  curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
+  "https://civitai.com/api/download/models/2052807?type=Model&format=SafeTensor" \
+  -o /ComfyUI/models/loras/nsfwDUnlocked-FLUX.safetensors
+else
+  echo "nsfwDUnlocked-FLUX.safetensors already exists, skipping."
+fi
+
 # VAE
 if [ ! -f /ComfyUI/models/vae/ae.safetensors ]; then
   wget -O /ComfyUI/models/vae/ae.safetensors \
