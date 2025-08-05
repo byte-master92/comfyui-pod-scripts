@@ -1,18 +1,26 @@
 #!/bin/bash
 
-# Create all needed folders
+# Create needed folders
 mkdir -p /ComfyUI/models/loras
-mkdir -p /ComfyUI/models/diffusion_models
+mkdir -p /ComfyUI/models/checkpoints
 mkdir -p /ComfyUI/models/vae
 mkdir -p /ComfyUI/models/text_encoders
 mkdir -p /ComfyUI/models/upscale_models
 
-# Main FLUX Diffusion Model
-if [ ! -f /ComfyUI/models/diffusion_models/flux1-dev.safetensors ]; then
-  wget -O /ComfyUI/models/diffusion_models/flux1-dev.safetensors \
+# Checkpoints
+if [ ! -f /ComfyUI/models/checkpoints/flux1-dev.safetensors ]; then
+  wget -O /ComfyUI/models/checkpoints/flux1-dev.safetensors \
   "https://huggingface.co/bstungnguyen/Flux/resolve/main/flux1-dev.safetensors"
 else
   echo "flux1-dev.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/checkpoints/CyberRealisticFlux-fp8.safetensors ]; then
+  curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
+  "https://civitai.com/api/download/models/2036890?type=Model&format=SafeTensor&size=pruned&fp=fp8" \
+  -o /ComfyUI/models/checkpoints/CyberRealisticFlux-fp8.safetensors
+else
+  echo "CyberRealisticFlux-fp8.safetensors already exists, skipping."
 fi
 
 # LoRAs
@@ -24,8 +32,9 @@ else
 fi
 
 if [ ! -f /ComfyUI/models/loras/aidmaMJv7-FLUX-v0.1.safetensors ]; then
-  wget -O /ComfyUI/models/loras/aidmaMJv7-FLUX-v0.1.safetensors \
-  "https://civitai.com/api/download/models/1470162?type=Model&format=SafeTensor"
+  curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
+  "https://civitai.com/api/download/models/1662872?type=Model&format=SafeTensor" \
+  -o /ComfyUI/models/loras/aidmaMJv7-FLUX-v0.1.safetensors
 else
   echo "aidmaMJv7-FLUX-v0.1.safetensors already exists, skipping."
 fi
@@ -46,6 +55,7 @@ else
   echo "aidmaHyperrealism-FLUX-v0.3.safetensors already exists, skipping."
 fi
 
+# All your named LoRAs
 if [ ! -f /ComfyUI/models/loras/epicGorgeousDetails-FLUX.safetensors ]; then
   curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
   "https://civitai.com/api/download/models/863655?type=Model&format=SafeTensor" \
@@ -92,6 +102,38 @@ if [ ! -f /ComfyUI/models/loras/nsfwDUnlocked-FLUX.safetensors ]; then
   -o /ComfyUI/models/loras/nsfwDUnlocked-FLUX.safetensors
 else
   echo "nsfwDUnlocked-FLUX.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/loras/CyberpunkAnimeStyle-FLUX.safetensors ]; then
+  curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
+  "https://civitai.com/api/download/models/747534?type=Model&format=SafeTensor" \
+  -o /ComfyUI/models/loras/CyberpunkAnimeStyle-FLUX.safetensors
+else
+  echo "CyberpunkAnimeStyle-FLUX.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/loras/Metalbeing-FLUX.safetensors ]; then
+  curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
+  "https://civitai.com/api/download/models/840743?type=Model&format=SafeTensor" \
+  -o /ComfyUI/models/loras/Metalbeing-FLUX.safetensors
+else
+  echo "Metalbeing-FLUX.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/loras/DetailedPerfectionStyle-FLUX.safetensors ]; then
+  curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
+  "https://civitai.com/api/download/models/931225?type=Model&format=SafeTensor" \
+  -o /ComfyUI/models/loras/DetailedPerfectionStyle-FLUX.safetensors
+else
+  echo "DetailedPerfectionStyle-FLUX.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/loras/CumInMouth-FLUX.safetensors ]; then
+  curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
+  "https://civitai.com/api/download/models/1432614?type=Model&format=SafeTensor" \
+  -o /ComfyUI/models/loras/CumInMouth-FLUX.safetensors
+else
+  echo "CumInMouth-FLUX.safetensors already exists, skipping."
 fi
 
 # VAE
