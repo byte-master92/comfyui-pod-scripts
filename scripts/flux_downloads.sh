@@ -2,19 +2,21 @@
 
 # Create needed folders
 mkdir -p /ComfyUI/models/loras
+mkdir -p /ComfyUI/models/diffusion_models
 mkdir -p /ComfyUI/models/checkpoints
 mkdir -p /ComfyUI/models/vae
 mkdir -p /ComfyUI/models/text_encoders
 mkdir -p /ComfyUI/models/upscale_models
 
-# Checkpoints
-if [ ! -f /ComfyUI/models/checkpoints/flux1-dev.safetensors ]; then
-  wget -O /ComfyUI/models/checkpoints/flux1-dev.safetensors \
+# Diffusion Models
+if [ ! -f /ComfyUI/models/diffusion_models/flux1-dev.safetensors ]; then
+  wget -O /ComfyUI/models/diffusion_models/flux1-dev.safetensors \
   "https://huggingface.co/bstungnguyen/Flux/resolve/main/flux1-dev.safetensors"
 else
   echo "flux1-dev.safetensors already exists, skipping."
 fi
 
+# Checkpoints
 if [ ! -f /ComfyUI/models/checkpoints/CyberRealisticFlux-fp8.safetensors ]; then
   curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
   "https://civitai.com/api/download/models/2036890?type=Model&format=SafeTensor&size=pruned&fp=fp8" \
