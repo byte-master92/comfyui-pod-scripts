@@ -7,15 +7,61 @@ mkdir -p /ComfyUI/models/vae
 mkdir -p /ComfyUI/models/text_encoders
 mkdir -p /ComfyUI/models/upscale_models
 
-# Main WAN Diffusion Model
-if [ ! -f /ComfyUI/models/diffusion_models/wan2.1_i2v_720p_14B_bf16.safetensors ]; then
-  wget -O /ComfyUI/models/diffusion_models/wan2.1_i2v_720p_14B_bf16.safetensors \
-  "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_720p_14B_bf16.safetensors"
+# WAN 2.2 Diffusion Models
+
+if [ ! -f /ComfyUI/models/diffusion_models/Wan2_2-TI2V-5B_fp8_e4m3fn_scaled_KJ.safetensors ]; then
+  wget -O /ComfyUI/models/diffusion_models/Wan2_2-TI2V-5B_fp8_e4m3fn_scaled_KJ.safetensors \
+  "https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/TI2V/Wan2_2-TI2V-5B_fp8_e4m3fn_scaled_KJ.safetensors"
 else
-  echo "wan2.1_i2v_720p_14B_bf16.safetensors already exists, skipping."
+  echo "Wan2_2-TI2V-5B_fp8_e4m3fn_scaled_KJ.safetensors already exists, skipping."
 fi
 
-# LoRAs
+if [ ! -f /ComfyUI/models/diffusion_models/Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors ]; then
+  wget -O /ComfyUI/models/diffusion_models/Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors \
+  "https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors"
+else
+  echo "Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/diffusion_models/Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors ]; then
+  wget -O /ComfyUI/models/diffusion_models/Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors \
+  "https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors"
+else
+  echo "Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/diffusion_models/Wan2_2-T2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors ]; then
+  wget -O /ComfyUI/models/diffusion_models/Wan2_2-T2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors \
+  "https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/T2V/Wan2_2-T2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors"
+else
+  echo "Wan2_2-T2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/diffusion_models/Wan2_2-T2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors ]; then
+  wget -O /ComfyUI/models/diffusion_models/Wan2_2-T2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors \
+  "https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/T2V/Wan2_2-T2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors"
+else
+  echo "Wan2_2-T2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors already exists, skipping."
+fi
+
+# Wan 2.2 LoRAs
+
+if [ ! -f /ComfyUI/models/loras/Wan2.2-Lightning_T2V-A14B-4steps-lora_HIGH_fp16.safetensors ]; then
+  wget -O /ComfyUI/models/loras/Wan2.2-Lightning_T2V-A14B-4steps-lora_HIGH_fp16.safetensors \
+  "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan22-Lightning/Wan2.2-Lightning_T2V-A14B-4steps-lora_HIGH_fp16.safetensors"
+else
+  echo "Wan2.2-Lightning_T2V-A14B-4steps-lora_HIGH_fp16.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/loras/Wan2.2-Lightning_T2V-A14B-4steps-lora_LOW_fp16.safetensors ]; then
+  wget -O /ComfyUI/models/loras/Wan2.2-Lightning_T2V-A14B-4steps-lora_LOW_fp16.safetensors \
+  "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan22-Lightning/Wan2.2-Lightning_T2V-A14B-4steps-lora_LOW_fp16.safetensors"
+else
+  echo "Wan2.2-Lightning_T2V-A14B-4steps-lora_LOW_fp16.safetensors already exists, skipping."
+fi
+
+
+# LoRAs 
 if [ ! -f /ComfyUI/models/loras/Wan2.1-Fun-14B-InP-MPS.safetensors ]; then
   wget -O /ComfyUI/models/loras/Wan2.1-Fun-14B-InP-MPS.safetensors \
   "https://huggingface.co/alibaba-pai/Wan2.1-Fun-Reward-LoRAs/resolve/036886aa1424cf08d93f652990fa99cddb418db4/Wan2.1-Fun-14B-InP-MPS.safetensors"
@@ -52,6 +98,14 @@ else
 fi
 
 # VAE
+
+if [ ! -f /ComfyUI/models/vae/Wan2.2_VAE.pth ]; then
+  wget -O /ComfyUI/models/vae/Wan2.2_VAE.pth \
+  "https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B/resolve/main/Wan2.2_VAE.pth"
+else
+  echo "Wan2.2_VAE.pth already exists, skipping."
+fi
+
 if [ ! -f /ComfyUI/models/vae/Wan2_1_VAE_bf16.safetensors ]; then
   wget -O /ComfyUI/models/vae/Wan2_1_VAE_bf16.safetensors \
   "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1_VAE_bf16.safetensors"
