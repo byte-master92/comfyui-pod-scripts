@@ -9,39 +9,39 @@ mkdir -p /ComfyUI/models/upscale_models
 
 # WAN 2.2 Diffusion Models
 
-if [ ! -f /ComfyUI/models/diffusion_models/Wan2_2-TI2V-5B_fp8_e4m3fn_scaled_KJ.safetensors ]; then
-  wget -O /ComfyUI/models/diffusion_models/Wan2_2-TI2V-5B_fp8_e4m3fn_scaled_KJ.safetensors \
-  "https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/TI2V/Wan2_2-TI2V-5B_fp8_e4m3fn_scaled_KJ.safetensors"
+if [ ! -f /ComfyUI/models/diffusion_models/wan2.2_i2v_high_noise_14B_fp16.safetensors ]; then
+  wget -O /ComfyUI/models/diffusion_models/wan2.2_i2v_high_noise_14B_fp16.safetensors \
+  "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp16.safetensors"
 else
-  echo "Wan2_2-TI2V-5B_fp8_e4m3fn_scaled_KJ.safetensors already exists, skipping."
+  echo "wan2.2_i2v_high_noise_14B_fp16.safetensors already exists, skipping."
 fi
 
-if [ ! -f /ComfyUI/models/diffusion_models/Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors ]; then
-  wget -O /ComfyUI/models/diffusion_models/Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors \
-  "https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors"
+if [ ! -f /ComfyUI/models/diffusion_models/wan2.2_i2v_low_noise_14B_fp16.safetensors ]; then
+  wget -O /ComfyUI/models/diffusion_models/wan2.2_i2v_low_noise_14B_fp16.safetensors \
+  "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp16.safetensors"
 else
-  echo "Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors already exists, skipping."
+  echo "wan2.2_i2v_low_noise_14B_fp16.safetensors already exists, skipping."
 fi
 
-if [ ! -f /ComfyUI/models/diffusion_models/Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors ]; then
-  wget -O /ComfyUI/models/diffusion_models/Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors \
-  "https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors"
+if [ ! -f /ComfyUI/models/diffusion_models/wan2.2_t2v_high_noise_14B_fp16.safetensors ]; then
+  wget -O /ComfyUI/models/diffusion_models/wan2.2_t2v_high_noise_14B_fp16.safetensors \
+  "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_t2v_high_noise_14B_fp16.safetensors"
 else
-  echo "Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors already exists, skipping."
+  echo "wan2.2_t2v_high_noise_14B_fp16.safetensors already exists, skipping."
 fi
 
-if [ ! -f /ComfyUI/models/diffusion_models/Wan2_2-T2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors ]; then
-  wget -O /ComfyUI/models/diffusion_models/Wan2_2-T2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors \
-  "https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/T2V/Wan2_2-T2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors"
+if [ ! -f /ComfyUI/models/diffusion_models/wan2.2_t2v_low_noise_14B_fp16.safetensors ]; then
+  wget -O /ComfyUI/models/diffusion_models/wan2.2_t2v_low_noise_14B_fp16.safetensors \
+  "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_t2v_low_noise_14B_fp16.safetensors"
 else
-  echo "Wan2_2-T2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors already exists, skipping."
+  echo "wan2.2_t2v_low_noise_14B_fp16.safetensors already exists, skipping."
 fi
 
-if [ ! -f /ComfyUI/models/diffusion_models/Wan2_2-T2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors ]; then
-  wget -O /ComfyUI/models/diffusion_models/Wan2_2-T2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors \
-  "https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/T2V/Wan2_2-T2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors"
+if [ ! -f /ComfyUI/models/diffusion_models/wan2.2_ti2v_5B_fp16.safetensors ]; then
+  wget -O /ComfyUI/models/diffusion_models/wan2.2_ti2v_5B_fp16.safetensors \
+  "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_ti2v_5B_fp16.safetensors"
 else
-  echo "Wan2_2-T2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors already exists, skipping."
+  echo "wan2.2_ti2v_5B_fp16.safetensors already exists, skipping."
 fi
 
 # Wan 2.2 LoRAs
