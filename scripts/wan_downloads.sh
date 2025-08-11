@@ -114,11 +114,12 @@ else
 fi
 
 # Text Encoder
-if [ ! -f /ComfyUI/models/text_encoders/umt5-xxl-enc-bf16.safetensors ]; then
-  wget -O /ComfyUI/models/text_encoders/umt5-xxl-enc-bf16.safetensors \
-  "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-bf16.safetensors"
+
+if [ ! -f /ComfyUI/models/text_encoders/umt5_xxl_fp16.safetensors ]; then
+  wget -O /ComfyUI/models/text_encoders/umt5_xxl_fp16.safetensors \
+  "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors"
 else
-  echo "umt5-xxl-enc-bf16.safetensors already exists, skipping."
+  echo "umt5_xxl_fp16.safetensors already exists, skipping."
 fi
 
 # Upscaler / Video Interpolator (standard RIFE)
