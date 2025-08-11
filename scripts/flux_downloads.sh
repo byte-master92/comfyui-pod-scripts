@@ -16,6 +16,24 @@ else
   echo "flux1-dev.safetensors already exists, skipping."
 fi
 
+if [ ! -f /ComfyUI/models/diffusion_models/flux1-kontext-dev.safetensors ]; then
+  export HF_TOKEN=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
+  wget --header="Authorization: Bearer $HF_TOKEN" \
+    -O /ComfyUI/models/diffusion_models/flux1-kontext-dev.safetensors \
+    "https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev/resolve/main/flux1-kontext-dev.safetensors"
+else
+  echo "flux1-kontext-dev.safetensors already exists, skipping."
+fi
+
+if [ ! -f /ComfyUI/models/diffusion_models/flux1-kontext-dev.safetensors ]; then
+  export HF_TOKEN=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
+  wget --header="Authorization: Bearer $HF_TOKEN" \
+    -O /ComfyUI/models/diffusion_models/flux1-krea-dev.safetensors \
+    "https://huggingface.co/black-forest-labs/FLUX.1-Krea-dev/resolve/main/flux1-krea-dev.safetensors"
+else
+  echo "flux1-kontext-dev.safetensors already exists, skipping."
+fi
+
 # Checkpoints
 if [ ! -f /ComfyUI/models/checkpoints/CyberRealisticFlux-fp8.safetensors ]; then
   curl -L -H "Authorization: Bearer 23a69a8c63706974c4347e5807472e8d" \
